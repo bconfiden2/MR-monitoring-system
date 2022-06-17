@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint, request
 from flask.templating import render_template
+from utils import *
 import json
 
 bp = Blueprint('main', __name__, url_prefix='/')
@@ -9,7 +10,10 @@ ApplicationMaster = configs["AM-IP:Port"] if "AM-IP:Port" in configs else "local
 
 @bp.route('/')
 def index():
-    return render_template('index.html')
+    app_list = get_apps(ResourceManager, "RUNNING")
+    
+    data = {"apps": app_list, "AM": ApplicationMaster}
+    return render_template('index.html', data=data)
 
 
 app = Flask(__name__)
