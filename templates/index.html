@@ -1,1 +1,10 @@
-hello, world!
+<head>
+    <meta http-equiv="refresh" content={{ data.interval }}>
+</head>
+
+<body>
+    {% for app in data.apps %}
+        {{ app }}
+        <br>
+    {% endfor %}
+</body>
