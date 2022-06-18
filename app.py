@@ -8,13 +8,15 @@ configs = json.load(open("setting.conf", "r"))
 ResourceManager = configs["RM-IP:Port"] if "RM-IP:Port" in configs else "localhost:8088"
 ApplicationMaster = configs["AM-IP:Port"] if "AM-IP:Port" in configs else "localhost:8088"
 interval = configs["update-interval"] if "update-interval" in configs else "5"
-
+worker_file = configs["workers"] if "workers" in configs else "./workers"
+with open(worker_file, "r") as f:
+    workers = [node.strip() for node in f.readlines()]
 
 @bp.route('/')
 def index():
     app_list = get_apps(ResourceManager, "RUNNING")
-    print("!!") 
-    data = {"apps": app_list, "AM": ApplicationMaster, "interval": interval}
+    
+    data = {"workers": workers, "apps": app_list, "AM": ApplicationMaster, "interval": interval}
     return render_template('index.html', data=data)
 
 
