@@ -10,13 +10,27 @@ ApplicationMaster = configs["AM-IP:Port"] if "AM-IP:Port" in configs else "local
 interval = configs["update-interval"] if "update-interval" in configs else "5"
 worker_file = configs["workers"] if "workers" in configs else "./workers"
 with open(worker_file, "r") as f:
-    workers = [node.strip() for node in f.readlines()]
+    workers = sorted(node.strip() for node in f.readlines())
 
 @bp.route('/')
 def index():
     app_list = get_apps(ResourceManager, "RUNNING")
     
-    data = {"workers": workers, "apps": app_list, "AM": ApplicationMaster, "interval": interval}
+    tasks = [[], []]
+    if len(app_list) > 0:
+        tasks = get_tasks(ApplicationMaster, app_list[0][0])
+    
+    map_tasks = {node:[] for node in workers}
+    for task in tasks[0]:
+        map_tasks[task[4]].append(int(task[1]))
+    mappers = [sorted(map_tasks[node], reverse=True) for node in workers]
+
+    reduce_tasks = {node:[] for node in workers}
+    for task in tasks[1]:
+        reduce_tasks[task[4]].append(int(task[1]))
+    reducers = [sorted(reduce_tasks[node], reverse=True) for node in workers]
+
+    data = {"workers": workers, "apps": app_list, "mappers": mappers, "reducers": reducers, "interval": interval}
     return render_template('index.html', data=data)
 
 
