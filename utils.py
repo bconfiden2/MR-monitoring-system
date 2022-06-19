@@ -29,7 +29,7 @@ def get_apps(RM, status):
         line = line[2:-2].split('","')
         app_id = '_'.join(line[0].split('_')[-2:])
         app_name = line[2]
-        apps.append((app_id, app_name))
+        apps.append((app_id[:-4], app_name))
 
     return apps
 
