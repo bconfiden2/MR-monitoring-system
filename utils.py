@@ -6,13 +6,15 @@ def convert_response(response):
     else:
         return response.text
 
-def get_apps(RM, status):
-    response = requests.get(f"http://{RM}/cluster/apps/{status}")
+def preprocess(URL):
+    response = requests.get(URL)
     result = convert_response(response)
-    
+    return result.split('\n')
+
+def get_apps(RM, status):
     flg = False
     apps = []
-    for line in result.split('\n'):
+    for line in preprocess(f"http://{RM}/cluster/apps/{status}"):
         if line.strip() == "var appsTableData=[":
             flg = True
             continue
@@ -34,12 +36,9 @@ def get_apps(RM, status):
 def get_tasks(AM, app_id, task_flg):
     if task_flg not in ('m','r'):
         return []
-    response = requests.get(f"http://{AM}/proxy/application_{app_id}/mapreduce/attempts/job_{app_id}/{task_flg}/RUNNING")
-    result = convert_response(response)
-
     tasks = []
     flg = False
-    for line in result.split('\n'):
+    for line in preprocess(f"http://{AM}/proxy/application_{app_id}/mapreduce/attempts/job_{app_id}/{task_flg}/RUNNING"):
         if line.strip() == "var attemptsTableData=[":
             flg = True
             continue
