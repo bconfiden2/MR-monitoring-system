@@ -11,13 +11,19 @@
     <div>
         <div class="info">
             Active Nodes<br>
-            10<br>
+            {{ data.workers|length }}<br>
+
+    
+
             <!--Active Nodes의 수를 표시-->
             <br>
-            app 1<br>
-            app 2<br>
-            app 3<br>
             <!--어떤 앱이 실행되고 있는지 표시할 곳-->
+            {% for i in data.apps %}
+            {{ i }}
+            <br>
+            {% endfor %}
+
+
         </div>
         
 
