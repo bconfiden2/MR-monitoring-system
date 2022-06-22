@@ -10,57 +10,51 @@
 <body>
     <div>
         <div class="info">
+            <!--The Number of Active Nodes-->
             Active Nodes<br>
-            {{ data.workers|length }}<br>
+            {{ data.workers|length }}<br><br>
 
-    
-
-            <!--Active Nodes의 수를 표시-->
-            <br>
-            <!--어떤 앱이 실행되고 있는지 표시할 곳-->
+            <!--Running App-->
             {% for i in data.apps %}
             {{ i }}
             <br>
             {% endfor %}
-
-
         </div>
 
-        {% for i in data.workers%}
 
-
-            <!-- Mapper Progress -->
-            <div class="mapper">
-                <div class="hostname1">
-                    {{ i }}<br><br>
-                    <div class="box1">
-                        <!-- box1<br> -->
-                        <div class="p1">
-                            p1
-                        </div>
-
-                        <div class="p2">
-                            p2
-                        </div>
-                        <div class="p3">
-                            p3
-                        </div>
-                        <div class="p4">
-                            p4
-                        </div>
+        <!-- Mapper Progress -->
+        <div class="mapper">
+        {% for i in data.workers %}
+            <div class="hostname">
+                {{ i }}<br><br>
+                <div class="box1">
+                    <!-- box1<br> -->
+                    <div class="p1">
+                        p1
                     </div>
 
-                    <div class="max1">
-                        <br>
-                        <br>
-                        max
+                    <div class="p2">
+                        p2
                     </div>
-
-                    
+                    <div class="p3">
+                        p3
+                    </div>
+                    <div class="p4">
+                        p4
+                    </div>
                 </div>
+
+                <div class="max">
+                    <br>
+                    <br>
+                    max
+                </div>
+
                 
             </div>
         {% endfor %}
+        </div>
+        
         
         <!-- Reducer Progress -->
         <div class="reducer">
