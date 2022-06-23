@@ -10,21 +10,23 @@
 <body>
     <div>
         <div class="info">
+            <!--The Number of Active Nodes-->
             Active Nodes<br>
-            10<br>
-            <!--Active Nodes의 수를 표시-->
+            {{ data.workers|length }}<br><br>
+
+            <!--Running App-->
+            {% for i in data.apps %}
+            {{ i }}
             <br>
-            app 1<br>
-            app 2<br>
-            app 3<br>
-            <!--어떤 앱이 실행되고 있는지 표시할 곳-->
+            {% endfor %}
         </div>
-        
+
 
         <!-- Mapper Progress -->
         <div class="mapper">
-            <div class="hostname1">
-                Host Name<br><br>
+        {% for i in data.workers %}
+            <div class="hostname">
+                {{ i }}<br><br>
                 <div class="box1">
                     <!-- box1<br> -->
                     <div class="p1">
@@ -42,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="max1">
+                <div class="max">
                     <br>
                     <br>
                     max
@@ -50,9 +52,9 @@
 
                 
             </div>
-             
+        {% endfor %}
         </div>
-            
+        
         
         <!-- Reducer Progress -->
         <div class="reducer">

@@ -91,12 +91,13 @@ div.vl {
     height: 500px;
 }
 
-.hostname1{
+.hostname{
     display: table;
+    height: auto;
 
 }
 
-.max1{
+.max{
     display: table-cell;
     vertical-align: middle;
 }
