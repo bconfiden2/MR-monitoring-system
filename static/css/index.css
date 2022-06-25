@@ -25,13 +25,23 @@ div.mapper{
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 20px;
-    padding: 50px;
+    padding: 10px;
+    padding-bottom: 40px;
     border-width: 10px;
     background-color: lightgrey;
 }
 
+/* .tasks{
+    width:8%;
+    padding: 30px;
+    border-width: 10px;
+    float: left;
+    background-color: grey;
+
+} */
+
 .p1{
-    width:7%;
+    width:8%;
     /* height: 40px; */
     /* margin-bottom: 20px; */
     padding: 30px;
@@ -45,7 +55,7 @@ div.mapper{
     width:7%;
     /* height: 40px; */
     /* margin-bottom: 20px; */
-    margin-left: 10px;
+    margin-left: 14px;
     padding: 30px;
     border-width: 10px;
     float: left;
@@ -57,7 +67,7 @@ div.mapper{
     width:7%;
     /* height: 40px; */
     /* margin-bottom: 20px; */
-    margin-left: 10px;
+    margin-left: 14px;
     padding: 30px;
     border-width: 10px;
     float: left;
@@ -69,7 +79,7 @@ div.mapper{
     width:7%;
     /* height: 40px; */
     /* margin-bottom: 20px; */
-    margin-left: 10px;
+    margin-left: 14px;
     padding: 30px;
     border-width: 10px;
     float: left;
