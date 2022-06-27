@@ -11,15 +11,20 @@ div.info{
 
 
 div.mapper{
-    width: 45%;
+    width: 35%;
     float:left;
     text-align : center;
     /* border: 1px solid black; */
+    
+}
 
+.hostname{
+    display: table;
+    height: auto;
 }
 
 .box1{
-    width: 400px;
+    width: 450px;
     height: 50px;
     margin-left: 10px;
     margin-right: 10px;
@@ -31,64 +36,28 @@ div.mapper{
     background-color: lightgrey;
 }
 
-/* .tasks{
-    width:8%;
-    padding: 30px;
-    border-width: 10px;
-    float: left;
-    background-color: grey;
-
-} */
 
 .p1{
     width:8%;
     /* height: 40px; */
     /* margin-bottom: 20px; */
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-width: 10px;
+    margin-right: 14px;
     float: left;
     background-color: grey;
 
 }
 
-.p2{
-    width:7%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    margin-left: 14px;
-    padding: 30px;
-    border-width: 10px;
+div.blank{
+    width: 20%;
     float: left;
-    background-color: grey;
-
-}
-
-.p3{
-    width:7%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    margin-left: 14px;
-    padding: 30px;
-    border-width: 10px;
-    float: left;
-    background-color: grey;
-
-}
-
-.p4{
-    width:7%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    margin-left: 14px;
-    padding: 30px;
-    border-width: 10px;
-    float: left;
-    background-color: grey;
-
+    text-align : center;
 }
 
 div.reducer{
-    width: 45%;
+    width: 35%;
     float: right;
     text-align : center;
     /* border: 1px solid black; */
@@ -101,11 +70,6 @@ div.vl {
     height: 500px;
 }
 
-.hostname{
-    display: table;
-    height: auto;
-
-}
 
 .max{
     display: table-cell;

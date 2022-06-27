@@ -24,37 +24,30 @@
 
         <!-- Mapper Progress -->
         <div class="mapper">
-        {% for i in data.workers %}
+        {% for i in range(data.workers|length) %}
+            {{ data.workers[i] }}<br>
             <div class="hostname">
-                {{ i }}<br>
                 <div class="box1">
-                    <!-- box1<br> -->
-                    <div class="tasks">
-                        <div class="p1">
-                            p1
-                        </div>
-
-                        <div class="p2">
-                            p2
-                        </div>
-                        <div class="p3">
-                            p3
-                        </div>
-                        <div class="p4">
-                            p4
-                        </div>
-                    </div>
+                    {% for map_tasks in data.mappers[i] %}
+                        
+                            <div class="p1">
+                                {{ map_tasks }}
+                            </div>
+                    {% endfor %}
                 </div>
 
                 <div class="max">
-                    <br>
-                    <br>
-                    max
+                    {{ data.mappers[i]|length }}
                 </div>
 
                 
             </div>
+                    
         {% endfor %}
+        </div>
+
+        <div class="blank">
+            <br>
         </div>
         
         
