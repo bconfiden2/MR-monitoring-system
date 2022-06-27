@@ -1,16 +1,9 @@
-/* div{
-    width: 100%;
-    height: auto;
-} */
-
-div.info{
+.info{
     width: 10%;
     float:left;
 }
 
-
-
-div.mapper{
+.mapper{
     width: 35%;
     float:left;
     text-align : center;
@@ -23,7 +16,7 @@ div.mapper{
     height: auto;
 }
 
-.box1{
+.progress{
     width: 450px;
     height: 50px;
     margin-left: 10px;
@@ -37,7 +30,7 @@ div.mapper{
 }
 
 
-.p1{
+.task{
     width:8%;
     /* height: 40px; */
     /* margin-bottom: 20px; */
@@ -50,13 +43,13 @@ div.mapper{
 
 }
 
-div.blank{
+.blank{
     width: 20%;
     float: left;
     text-align : center;
 }
 
-div.reducer{
+.reducer{
     width: 35%;
     float: right;
     text-align : center;
@@ -65,7 +58,7 @@ div.reducer{
 
 
 
-div.vl {
+.vl {
     border-left: 1px solid #000;
     height: 500px;
 }

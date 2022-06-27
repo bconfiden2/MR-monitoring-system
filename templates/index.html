@@ -27,10 +27,10 @@
         {% for i in range(data.workers|length) %}
             {{ data.workers[i] }}<br>
             <div class="hostname">
-                <div class="box1">
+                <div class="progress">
                     {% for map_tasks in data.mappers[i] %}
                         
-                            <div class="p1">
+                            <div class="task">
                                 {{ map_tasks }}
                             </div>
                     {% endfor %}
@@ -53,7 +53,26 @@
         
         <!-- Reducer Progress -->
         <div class="reducer">
-            Host Name
+        {% for i in range(data.workers|length) %}
+            {{ data.workers[i] }}<br>
+            <div class="hostname">
+                <div class="progress">
+                    {% for reducer_tasks in data.reducers[i] %}
+                        
+                            <div class="task">
+                                {{ reducer_tasks }}
+                            </div>
+                    {% endfor %}
+                </div>
+
+                <div class="max">
+                    {{ data.reducers[i]|length }}
+                </div>
+
+                
+            </div>
+                    
+        {% endfor %}
 
         </div>
     </div>
