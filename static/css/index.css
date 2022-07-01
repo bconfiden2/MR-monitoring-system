@@ -7,7 +7,6 @@
     width: 35%;
     float:left;
     text-align : center;
-    /* border: 1px solid black; */
     
 }
 
@@ -18,30 +17,43 @@
 
 .progress{
     width: 450px;
-    height: 50px;
+    height: 80px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 20px;
     padding: 10px;
-    padding-bottom: 40px;
     border-width: 10px;
     background-color: lightgrey;
+    text-align: center;
+    
 }
 
 
 .task{
+    position: relative;
     width:8%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-width: 10px;
+    height: 100%;
     margin-right: 14px;
     float: left;
     background-color: grey;
-
+    text-align: center;
+    vertical-align: bottom;
+    /* display: table; */
 }
+
+.graph{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    text-align: center;
+    /* display: table-cell; */
+    /* vertical-align: bottom; */
+    
+}
+
+
 
 .blank{
     width: 20%;

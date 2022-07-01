@@ -28,12 +28,27 @@
             {{ data.workers[i] }}<br>
             <div class="hostname">
                 <div class="progress">
-                    {% for map_tasks in data.mappers[i] %}
-                        
-                            <div class="task">
-                                {{ map_tasks }}
-                            </div>
-                    {% endfor %}
+                    {% if data.mappers[i]|length <= 9 %}       
+                        {% for map_tasks in data.mappers[i] %}
+                                <div class="task">
+                                    <div class="graph">
+                                        <br><br>
+                                        {{ map_tasks }}
+                                    </div>
+                                </div>
+                        {% endfor %}
+                    {% else %}
+                        {% for idx in range(8) %}
+                                <div class="task">
+                                    <div class="graph">
+                                        <br><br>
+                                        {{ data.mappers[i][idx] }}
+                                    </div>
+                                </div>
+                        {% endfor %}
+                        <br>...
+                    {% endif %}
+
                 </div>
 
                 <div class="max">
@@ -67,6 +82,7 @@
 
                 <div class="max">
                     {{ data.reducers[i]|length }}
+                    <br>
                 </div>
 
                 
