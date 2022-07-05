@@ -1,84 +1,73 @@
-/* div{
-    width: 100%;
-    height: auto;
-} */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@600&family=Roboto:wght@500&display=swap'); */
 
-div.info{
-    width: 10%;
+.info{
+    width: 9%;
     float:left;
+    /* font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Roboto', sans-serif; */
 }
 
 
-
-div.mapper{
-    width: 45%;
+.mapper{
+    width: 35%;
     float:left;
     text-align : center;
-    /* border: 1px solid black; */
-
+    
 }
 
-.box1{
-    width: 400px;
-    height: 50px;
+.hostname{
+    display: table;
+    height: auto;
+}
+
+.progress{
+    width: 450px;
+    height: 80px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 20px;
-    padding: 50px;
+    padding: 10px;
     border-width: 10px;
     background-color: lightgrey;
+    text-align: center;
+    
 }
 
-.p1{
-    width:7%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    padding: 30px;
-    border-width: 10px;
+
+.task{
+    position: relative;
+    width:8%;
+    height: 100%;
+    margin-right: 14px;
     float: left;
     background-color: grey;
-
+    text-align: center;
+    vertical-align: bottom;
+    /* display: table; */
 }
 
-.p2{
-    width:7%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    margin-left: 10px;
-    padding: 30px;
-    border-width: 10px;
+.graph{
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    position: absolute;
+    text-align: center;
+    /* display: table-cell; */
+    /* vertical-align: bottom; */
+    
+}
+
+
+
+.blank{
+    width: 20%;
     float: left;
-    background-color: grey;
-
+    text-align : center;
 }
 
-.p3{
-    width:7%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    margin-left: 10px;
-    padding: 30px;
-    border-width: 10px;
-    float: left;
-    background-color: grey;
-
-}
-
-.p4{
-    width:7%;
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
-    margin-left: 10px;
-    padding: 30px;
-    border-width: 10px;
-    float: left;
-    background-color: grey;
-
-}
-
-div.reducer{
-    width: 45%;
+.reducer{
+    width: 35%;
     float: right;
     text-align : center;
     /* border: 1px solid black; */
@@ -86,16 +75,11 @@ div.reducer{
 
 
 
-div.vl {
+.vl {
     border-left: 1px solid #000;
     height: 500px;
 }
 
-.hostname{
-    display: table;
-    height: auto;
-
-}
 
 .max{
     display: table-cell;

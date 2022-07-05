@@ -4,7 +4,7 @@
     <meta charset="utf-8" http-equiv="refresh" content={{data.interval}}>
     <title>BOAZ Adv</title>
     <link href="static/css/index.css" rel="stylesheet" type="text/css">
-    
+    <script src="static/js/index.js"></script>
 </head>
 
 <body>
@@ -14,51 +14,94 @@
             Active Nodes<br>
             {{ data.workers|length }}<br><br>
 
+
             <!--Running App-->
-            {% for i in data.apps %}
-            {{ i }}
-            <br>
+            {% for idx in range(data.apps|length) %}
+                {{ data.apps[idx][1] }} &nbsp;
+                <span onclick="move({{ data.apps[idx][0] }})">{{ data.apps[idx][0] }}</span>
+                <br>
             {% endfor %}
+
+
+
+            
+
+            
+
+            
+
+            
+            
         </div>
 
 
         <!-- Mapper Progress -->
         <div class="mapper">
-        {% for i in data.workers %}
+        {% for i in range(data.workers|length) %}
+            {{ data.workers[i] }}<br>
             <div class="hostname">
-                {{ i }}<br><br>
-                <div class="box1">
-                    <!-- box1<br> -->
-                    <div class="p1">
-                        p1
-                    </div>
+                <div class="progress">
+                    {% if data.mappers[i]|length <= 9 %}       
+                        {% for map_tasks in data.mappers[i] %}
+                                <div class="task">
+                                    <div class="graph">
+                                        <br><br>
+                                        {{ map_tasks }}
+                                    </div>
+                                </div>
+                        {% endfor %}
+                    {% else %}
+                        {% for idx in range(8) %}
+                                <div class="task">
+                                    <div class="graph">
+                                        <br><br>
+                                        {{ data.mappers[i][idx] }}
+                                    </div>
+                                </div>
+                        {% endfor %}
+                        <br>...
+                    {% endif %}
 
-                    <div class="p2">
-                        p2
-                    </div>
-                    <div class="p3">
-                        p3
-                    </div>
-                    <div class="p4">
-                        p4
-                    </div>
                 </div>
 
                 <div class="max">
-                    <br>
-                    <br>
-                    max
+                    {{ data.mappers[i]|length }}
                 </div>
 
                 
             </div>
+                    
         {% endfor %}
+        </div>
+
+        <div class="blank">
+            <br>
         </div>
         
         
         <!-- Reducer Progress -->
         <div class="reducer">
-            Host Name
+        {% for i in range(data.workers|length) %}
+            {{ data.workers[i] }}<br>
+            <div class="hostname">
+                <div class="progress">
+                    {% for reducer_tasks in data.reducers[i] %}
+                        
+                            <div class="task">
+                                {{ reducer_tasks }}
+                            </div>
+                    {% endfor %}
+                </div>
+
+                <div class="max">
+                    {{ data.reducers[i]|length }}
+                    <br>
+                </div>
+
+                
+            </div>
+                    
+        {% endfor %}
 
         </div>
     </div>
