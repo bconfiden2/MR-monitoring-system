@@ -4,7 +4,6 @@
     <meta charset="utf-8" http-equiv="refresh" content={{data.interval}}>
     <title>BOAZ Adv</title>
     <link href="static/css/index.css" rel="stylesheet" type="text/css">
-    
 </head>
 
 <body>
@@ -14,11 +13,31 @@
             Active Nodes<br>
             {{ data.workers|length }}<br><br>
 
+
             <!--Running App-->
-            {% for i in data.apps %}
-            {{ i }}
-            <br>
+            <script>
+                function move(app_id){
+                    var link = "http://localhost:4000/" + app_id;
+                    location.href=link;
+                }
+            </script>
+
+            {% for idx in range(data.apps|length) %}
+                {{ data.apps[idx][1] }} &nbsp;
+                <span onclick="move({{ data.apps[idx][0] }})">{{ data.apps[idx][0] }}</span>
+                <br>
             {% endfor %}
+
+
+
+            
+
+            
+
+            
+
+            
+            
         </div>
 
 

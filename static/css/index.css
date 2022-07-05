@@ -1,7 +1,12 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@600&family=Roboto:wght@500&display=swap'); */
+
 .info{
-    width: 10%;
+    width: 9%;
     float:left;
+    /* font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Roboto', sans-serif; */
 }
+
 
 .mapper{
     width: 35%;
