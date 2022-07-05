@@ -4,6 +4,7 @@
     <meta charset="utf-8" http-equiv="refresh" content={{data.interval}}>
     <title>BOAZ Adv</title>
     <link href="static/css/index.css" rel="stylesheet" type="text/css">
+    <script src="static/js/index.js"></script>
 </head>
 
 <body>
@@ -15,13 +16,6 @@
 
 
             <!--Running App-->
-            <script>
-                function move(app_id){
-                    var link = "http://localhost:4000/" + app_id;
-                    location.href=link;
-                }
-            </script>
-
             {% for idx in range(data.apps|length) %}
                 {{ data.apps[idx][1] }} &nbsp;
                 <span onclick="move({{ data.apps[idx][0] }})">{{ data.apps[idx][0] }}</span>
